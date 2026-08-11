@@ -32,7 +32,6 @@ function getProducts() {
     .catch((err) => console.log("error", err));
 }
 
-
 function createTag(tag) {
   return `<p class="p1">${tag}</p>`;
 }
