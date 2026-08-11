@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    border-bottom: 1px solid gray;
+    
+}
+.nav, ul,li, a{
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+   color: black;
+   gap: 20px;
+   
+}
+.nav{
+    margin-left: 250px;
+    margin-right: 250px;
+}
+.nav, ul, li{
+    display: flex;
+}
+a.active{
+    text-decoration: underline;
+
+    color: blue;
+}
+.logo{
+    color: blue;
+    font-size: 24px;
+    text-decoration: bold;
+}
+.input{
+    border-radius: 8px;
+    border: 1px solid gray;
+    padding: 10px;
+    position: relative;
+}
+
+.fa-magnifying-glass{
+    position: absolute;
+    right: 150px;
+}
+
+.section1{
+    margin-top: 30px;
+    padding: 15px;
+}
+
+.filter{
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color:#b7dcec;
+    padding: 6px;
+    text-align: left;
+    width: 90px;
+    position: relative;
+}
+.fa-filter{
+    position: absolute;
+    right: 150px;
+    bottom: 465px;
+}
+.sort{
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color:#b7dcec;
+      padding: 6px;
+       text-align: left;
+    width: 90px;
+    position: relative;
+}
+.fa-arrow-down-wide-short{
+     position: absolute;
+    right: 50px;
+    bottom: 465px; 
+}
+.all{
+    display: flex;
+    gap: 800px;
+}
+.section2{
+    padding: 15px;
+}
+.card{
+     border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin:10px;
+     margin-top: 30px;
+    width: 350px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 350px;
+    height: 300px;
+}
+.text2{
+    margin:10px;
+    display: flex;
+    gap: 10px;
+}
+
+.p1{
+    color: #006591;
+    background-color: #4ebdec;
+    width: 80px;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.title{
+     margin:10px;
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+}
+.p2{
+     margin:10px;
+    font-size: 12px;
+}
+
+.btn{
+ padding: 10px;
+  margin:10px;
+       text-align: left;
+    width: 320px;
+    background-color: blue;
+    text-align: center;
+    border: 1px solid blue;
+    color: white;
+    border-radius: 10px;
+}
+
+footer{
+    
+       padding:20px;
+       border-top: 1px solid #C7C4D8;
+       background-color: #E5EEFF;
+}
+
+.p3{
+    margin-right: 550px;
+    font: 10px;
+}
+
+.logos{
+    color: rgb(0, 0, 5);
+    font-size: 20px;
+    text-decoration: bold;
+}
