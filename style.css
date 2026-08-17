@@ -134,6 +134,10 @@ a.active {
   text-align: center;
 }
 
+.search-btn {
+  padding: 5px;
+}
+
 .title {
   margin: 10px;
   display: flex;

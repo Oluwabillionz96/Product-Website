@@ -1,4 +1,9 @@
 const productSection = document.querySelector(".section2");
+const serverURL = "https://dummyjson.com";
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.querySelector(".search-btn");
+
+searchBtn.addEventListener("click", searchProducts);
 
 function getProductData(product) {
   return {
@@ -10,24 +15,48 @@ function getProductData(product) {
   };
 }
 
-function getProducts() {
+const displayData = (data, loading) => {
+  const allProducts = data.products;
+
+  const products = allProducts.map(getProductData);
+  productSection.removeChild(loading);
+  products.forEach((product) => {
+    const card = createCard(product);
+    productSection.innerHTML = productSection.innerHTML + card;
+  });
+};
+
+function handleLoading() {
   const loading = document.createElement("p");
   loading.textContent = "Loading...";
   loading.classList.add("loading");
   productSection.appendChild(loading);
+  return loading;
+}
 
-  fetch("https://dummyjson.com/products")
+function searchProducts() {
+  productSection.innerHTML = "";
+  const loading = handleLoading();
+
+  fetch(`${serverURL}/products/search?q=${searchInput.value}`)
     .then((res) => res.json())
     .then((data) => {
-      const allProducts = data.products;
+      if (data.total < 1) {
+        productSection.innerHTML =
+          "<p class='loading'>Product was not found</p>";
+        return;
+      }
+      displayData(data, loading);
+    });
+}
 
-      const products = allProducts.map(getProductData);
-      productSection.removeChild(loading);
-      products.forEach((product) => {
-        const card = createCard(product);
-        productSection.innerHTML = productSection.innerHTML + card;
-        // console.log(card);
-      });
+function getProducts() {
+  const loading = handleLoading();
+
+  fetch(`${serverURL}/products`)
+    .then((res) => res.json())
+    .then((data) => {
+      displayData(data, loading);
     })
     .catch((err) => console.log("error", err));
 }
@@ -38,7 +67,6 @@ function createTag(tag) {
 
 function createCard(product) {
   const tags = product.tags.map((tag) => createTag(tag));
-  console.log(tags);
   return `<div class="card">
     <img src=${product.image} class="img" />
     <div class="text2">
